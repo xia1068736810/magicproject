@@ -1,16 +1,15 @@
 language: java
-sudo: false
+
+cache:
+ directories:
+   - $HOME/.m2
+
 jdk:
-  - oraclejdk8
-  - openjdk8
-  - oraclejdk9
-  - openjdk9
-  - oraclejdk10
-  - openjdk10
+   - oraclejdk8
 
 before_install:
-  - wget https://github.com/orbit/orbit/archive/f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
-  - unzip f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
-  - cp -rT orbit-f58ec53dd4105c8ff939961aa7fdf88c69181fdf ./
-  - rm -r orbit-f58ec53dd4105c8ff939961aa7fdf88c69181fdf
-  - rm f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
+  - wget https://github.com/networknt/light-4j/archive/425a4cedce7624796f9397d64c3fc1be8672d49b.zip
+  - unzip 425a4cedce7624796f9397d64c3fc1be8672d49b.zip
+  - cp -rT light-4j-425a4cedce7624796f9397d64c3fc1be8672d49b ./
+  - rm -r light-4j-425a4cedce7624796f9397d64c3fc1be8672d49b
+  - rm 425a4cedce7624796f9397d64c3fc1be8672d49b.zip
