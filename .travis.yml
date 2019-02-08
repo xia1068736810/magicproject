@@ -1,23 +1,16 @@
-sudo: false
 language: java
+sudo: false
 jdk:
-- oraclejdk8
-- oraclejdk7
-- openjdk7
-- openjdk6
-env:
-  global:
-  - SONATYPE_USERNAME=davidmoten
-  - secure: HdYgKqAqTG8sVkWFJ5bijpUdM34BvMSiFkgu2PjQ408kjYS9Uk+6tJgvxC9heFjv120FBgfGYazyO9oC5RYOjQglLVl/iD8cZ2Za966jazvfFln/YHaTyS2RnUbE8S54bKX5svFEx0JJWimovW5BtbeFP76iaiw9h+cPZUZIDig=
-  - secure: jWOdssMm/KD7EWkRYZj/IxUSgqO736tARwbvvSYtFk5MWEhou9DIntCEeRoUgwQ9qgsZuOHkp2oay7QzRGejw1ec6Etw1ti9incbQqmmStgB4hLefD9PdRFqoBN/Wx6/hG77FSwd7YtJk2/uUiJFiVhDbDINru1Hh0GY1GXo8mQ=
-
-after_success:
-  - src/deploy/deploy.sh
-  - bash <(curl -s https://codecov.io/bash)
+  - oraclejdk8
+  - openjdk8
+  - oraclejdk9
+  - openjdk9
+  - oraclejdk10
+  - openjdk10
 
 before_install:
-  - wget https://github.com/davidmoten/rxjava-extras/archive/9ac8d60de015217aac0c447c95187457c0a4a4d0.zip
-  - unzip 9ac8d60de015217aac0c447c95187457c0a4a4d0.zip
-  - cp -rT rxjava-extras-9ac8d60de015217aac0c447c95187457c0a4a4d0 ./
-  - rm -r rxjava-extras-9ac8d60de015217aac0c447c95187457c0a4a4d0
-  - rm 9ac8d60de015217aac0c447c95187457c0a4a4d0.zip
+  - wget https://github.com/orbit/orbit/archive/f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
+  - unzip f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
+  - cp -rT orbit-f58ec53dd4105c8ff939961aa7fdf88c69181fdf ./
+  - rm -r orbit-f58ec53dd4105c8ff939961aa7fdf88c69181fdf
+  - rm f58ec53dd4105c8ff939961aa7fdf88c69181fdf.zip
